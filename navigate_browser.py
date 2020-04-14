@@ -3,20 +3,23 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 driver = webdriver.Chrome(executable_path="C:\shefali\Drivers\chromedriver.exe")
-driver.get("https://www.facebook.com/")
+driver.get("http://127.0.0.1:8000/eradicate/")
 print(driver.title) # print FACEBOOK
-driver.get("https://www.netflix.com/")
-print(driver.title)# print NETFLIX
+driver.get("https://www.google.com/")
+print(driver.title)# print google
 
+#driver.execute_script("window.history.go(-1)")
 driver.back()
+time.sleep(5)
 print(driver.title) # print FACEBOOK
 
-time.sleep(5)
 driver.forward()
-print(driver.title)# print NETFLIX
-
 time.sleep(5)
+print(driver.title)# print Google
+
+
 driver.back()
+time.sleep(5)
 print(driver.title)
 driver.close()
 
